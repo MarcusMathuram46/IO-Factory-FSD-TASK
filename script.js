@@ -3,30 +3,29 @@ function calculateWater(){
     const heights = document.getElementById("block-heights").value
     .split(',')
     .map(num => parseInt(num, 10))
-    console.log(heights)
     const waterUnits = calculateWaterUnits(heights);
-    console.log(waterUnits);
+    
     document.getElementById("result").innerText =`Total Water Stored: ${waterUnits} units`;
     renderBlocks(heights);
 }
-console.log(calculateWater())
+
 function calculateWaterUnits(heights) {
     const n = heights.length;
-    console.log(n)
+
     let water = 0;
-    console.log(water)
+    
     const leftMax = Array(n).fill(0);
-    console.log(leftMax)
+    
     const rightMax = Array(n).fill(0);
-    console.log(rightMax)
+    
 
     leftMax[0] = heights[0];
-    console.log(leftMax);
+    
     for(let i=1;i<n;i++){
         leftMax[i] = Math.max(leftMax[i-1], heights[i])
     }
     rightMax[n-1] = heights[n-1];
-    console.log(rightMax);
+    
     for(let i = n-2; i>=0; i--){
         rightMax[i] = Math.max(rightMax[i+1], heights[i])
     }
@@ -34,9 +33,9 @@ function calculateWaterUnits(heights) {
         water += Math.min(leftMax[i], rightMax[i]) - heights[i]
     }
     return water;
-    console.log(water)
+    
 }
-console.log(calculateWaterUnits)
+
 
 function renderBlocks(heights) {
     const svg = document.getElementById("water-visualization");
@@ -81,4 +80,3 @@ function renderBlocks(heights) {
         }
     })
 }
-console.log(renderBlocks())
