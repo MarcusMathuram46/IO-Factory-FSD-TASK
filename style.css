@@ -1,0 +1,29 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input,button {
+    padding: 10px;
+    margin: 10px;
+}
+
+#water-visualization{
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    background-color: #e0f7fa;
+}
